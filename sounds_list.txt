@@ -1,0 +1,549 @@
+snapsw	snap roll
+ail3d	3d ailerons
+ele3d	3d elevator
+rud3d	3d rudder
+aero	aerobatics
+aero3d	3d aerobatics
+aeropr	precision aerobatics
+srf_ail	aileron
+srf_ails	ailerons
+ailhgh	aileron high
+ailmed	aileron medium
+aillow	aileron low
+rudcail	rudder coupled to ailerons
+ail2rud	ailerons mixted with rudder
+ele2flr	elevator mixed with flaperons
+ele2flp	elevator mixed with flaps
+knfedge	Knife Edge
+knfedgm	Knife Edge Mix
+flaprns	Flaperons
+timup	time up
+timisup	time is up
+mxdwth	… mixed with …
+cpldwth	… coupled with …
+mix	...mix
+switch	switch
+home	home
+and	and
+not	not that one!
+xor	xor
+srf_elv	elevator
+elehigh	elevator high
+elemed	elevator medium
+elelow	elevator low
+batcrit	battery critical
+batlow	low battery
+geardn	gear down
+gearup	gear up
+camcentr	camera centered
+camfix	camera fixed
+camman	camera manual
+camon	camera on
+camoff	camera off
+gmblact	gimbal active
+gmblon	gimbal on
+gmbloff	gimbal off
+gps	GPS
+bombrel	bombs released
+bombawy	bombs away
+smokeon	smoke on
+smokeoff	smoke off
+pchtdep	parachute deployed
+brmtron	barometer on
+brmtrof	barometer off
+mgohmon	magnet O meter on
+mgohmof	magnet O meter off
+mgmtron	magnetometer on
+mgmtrof	magnetometer off
+cmpsson	compass on
+cmpssof	compass off
+beep	beep
+beepoff	beep off
+beepon	beep on
+beeper	beeper
+beeperof	beeper off
+beeperon	beeper on
+flapsup	flaps up
+flapsdn	flaps down
+flaps1	flaps One
+flaps2	flaps Two
+flapsdep	flaps deployed
+flaphlf	flaps half
+flapfll	flaps full
+flpnorm	flaps normal
+flpail	flaps synced with ailerons
+flaps	flaps
+airmod	air mode
+airmodof	air mode off
+airmodon	air mode on
+allghtof	all lights off
+calibr	calibration
+datalog	datalogging
+harikiri	harikiri
+headfree	headfree
+headadj	heading adjust
+luxfloat	luxfloat
+multiwii	multiwii
+mwiihbrd	multiwii hybrid
+mwiilate	multiwii latest
+mwiirewr	multiwii re-write
+telemtry	telemetry
+wayprech	waypoint reached
+wayptst	waypoint set
+mltrtr	multirotor
+stblz	Stabilize
+stblzmd	Stabilize mode
+auto	Auto
+autort	Auto Rotation
+fbwa	fly by wire A
+fbwb	fly by wire B
+crcl	circle
+crclmd	circle mode
+waypt	waypoint
+althld	altitude hold
+poshld	position hold
+quadc	quadcopter
+tric	tricopter
+hexc	hexacopter
+octc	octocopter
+uav	UAV
+fpv	FPV
+fpvf	From Pilots View
+hybrd	hybrid
+hybrdmd	hybrid mode
+drft	drift
+drftmd	drift mode
+automd	auto mode
+acro	acro
+acromd	acro mode
+sprt	sport
+sprtmd	sport mode
+gidd	guided
+giddmd	guided mode
+flwme	follow me
+flwmemd	follow me mode
+angl	angle
+anglmd	angle mode
+hrzn	horizon
+hrznmd	horizon mode
+auttn	auto tune
+auttnmd	auto tune mode
+actcam	action camera
+bellycam	belly camera
+bodycam	body camera
+flircam	FLIR camera
+goprocam	Go Pro Camera
+headtrk	head tracker
+hdtrkact	head tracker active
+hdtrkdis	head tracker disabled
+hdtrkoff	head tracker off
+hdtrkon	head tracker on
+mobuscam	mobius camera
+nosecam	nose camera
+osd	OSD
+osdoff	OSD off
+osdon	OSD on
+pntltact	pan-tilt active
+pntltdis	pan-tilt disabled
+runcam	runcam
+runcamcm	runcam camera
+shutter	shutter
+tailcam	tail camera
+video1	video 1
+video2	video 2
+video3	video 3
+video4	video 4
+video5	video 5
+opentx	OpenTx
+intmodl	Internal module
+extmodl	External module
+deplyd	deployed
+good	good
+bad	bad
+ugly	ugly
+situ	situation
+pos	positive
+neg	negative
+sitnorm	situation normal
+train	Training
+stblon	stabilization on
+stbloff	stabilization off
+takoff	Takeoff
+cplton	co-pilot on
+cpltoff	co-pilot off
+race	race
+racemd	racemode
+racing	racing
+actv	active
+actvd	activated
+dactvd	deactivated
+eng	engaged
+dseng	disengage
+on	on
+off	off
+whtvr	whatever
+fxdwng	fixed wing
+trnr	trainer
+sprtsfl	sports flying
+pylnrc	pylon racing
+seapl	Seaplane
+vintg	Vintage
+warbrd	warbird
+sim	simulator
+sclmod	scale model
+bklght	back light on
+stopped	stopped
+reset	reset
+danger	Danger!
+timron	Timer On
+timroff	Timer Off
+timrone	Timer One
+timrtwo	Timer Two
+timrst	Timer Reset
+timr1rst	Timer One Reset
+timr2rst	Timer Two Reset
+timlnd	It is time for you to land
+timlnd2	You really should think about landing
+cmnglnd	Coming in for landing
+deadstk	Dead Stick!
+altlow	altitude low
+altalt	altitude! altitude!
+dngrdngr	danger! danger!
+drone	drone
+rtf	ready to fly
+thankyou	thank you
+why	why?
+yes	yes
+heli	helicopter
+heli3d	3d helicopter
+heliscl	scale helicopter
+acrmd	acro mode
+hedhld	heading hold active
+ratemd	rate mode active
+3dpitch	3d pitch
+3dpact	3d pitch active
+3dpoff	3d pitch off
+gyrhh	gyro heading hold
+gyrrate	gyro rate mode
+sclpitch	scale pitch
+hvr	hover
+atmtc	Automatic
+atmtcmd	Automatic mode
+corslk	course lock
+corslkm	course lock mode
+homlk	home lock
+homlkm	home lock mode
+brkson	brakes on
+brksoff	brakes off
+abrkop	air brakes open
+abrkcl	air brakes closed
+airbk	airbrake
+airbkoff	airbrake off
+fandf	fast and flat
+ductf	ducted fan
+jett	jet turbine
+allghton	all lighs on
+lndgltof	landing lights off
+lndglton	landing lights on
+lono	landing on, nav off
+lightson	lights off
+lightsof	lights on
+navltsof	nav lights off
+navltson	nav lights on
+nolo	nav on, landing off
+strobeof	strobe off
+strobeon	strobe on
+fsoff	failsafe off
+fson	failsafe on
+safeon	Safe On
+fltmode1	flight mode one
+fltmode2	flight mode two
+fltmode3	flight mode three
+fltmode4	flight mode four
+fltmode5	flight mode five
+fltmode6	flight mode six
+fltmode7	flight mode seven
+fltmode8	flight mode eight
+mode0	mode zero
+mode1	mode one
+mode2	mode two
+mode3	mode three
+mode4	mode four
+mode5	mode five
+mode6	mode six
+mode7	mode seven
+mode8	mode eight
+trngmd	training mode
+nrmmod	normal mode
+hvrmd	hover mode
+stnton	stunt mode on
+stntoff	stunt mode off
+stntact	stunt mode active
+thrmlmd	thermal mode
+lndgmd	landing mode
+speedmd	speed mode
+lnchmd	launch mode
+cruzmd	cruise mode
+loitrmd	Loiter mode
+zoommd	zoom mode
+seekmd	seek mode
+clmbmd	climbing mode
+mode	mode
+mdon	mode on
+mdoff	mode off
+mdact	mode active
+gpsmd	GPS mode
+attmd	Attitude mode
+slflvl	Self level mode
+slflvlm	Self level mixing mode
+hedhome	Heading Home
+swauto	Switch Auto
+swcrcl	Switch Circle
+swdrft	Switch Drift
+swwaypt	Switch Waypoint
+lnchmd2	launch mode (alt)
+lowrates	low rates
+midrates	middle rates
+hirates	high rates
+3drtson	3D rates on
+3drtsoff	3D rates off
+3drtsact	3D rates active
+expoon	expo on
+expooff	expo off
+srf_rud	rudder
+rudhgh	rudder high
+rudmed	rudder medium
+rudlow	rudder low
+soring	soaring
+pwrgld	power glider
+thrml	thermal
+crowon	crow on
+crowoff	crow off
+btflyon	butterfly on
+btflyoff	butterfly off
+reflex	reflex
+splrop	spoiler open
+splrcl	spoiler closed
+clmb	climbing
+dscnd	descending
+speed	speed
+lnch	launch
+cruz	cruise
+loitr	Loiter
+zoom	zoom
+seek	seek
+dlg	DLG
+dlgf	discus launch glider
+lwstcell	Lowest cell …
+battcns	Battery consumption …
+packvlt	pack voltage …
+currdrw	Current draw …
+pwrrd	Power reading …
+srf_thr	throttle
+thract	throttle active
+thrhold	throttle hold
+thrrel	throttle release
+idlup	idle up
+idlup1	idle up 1
+idlup2	idle up 2
+idldwn	idle down
+ignon	ignition on
+ignact	ignition active
+ignoff	ignition off
+thrdis	throttle disabled
+engarm	engines armed
+engdisa	engines disarmed
+engdis	engine disabled
+engoff	engine off
+engon	engine on
+thrZero	Thottle Zero
+thrOne	Thottle One
+thrTwo	Thottle Two
+thrThree	Thottle Three
+SYSTEM/0000	0
+SYSTEM/0001	1
+SYSTEM/0002	2
+SYSTEM/0003	3
+SYSTEM/0004	4
+SYSTEM/0005	5
+SYSTEM/0006	6
+SYSTEM/0007	7
+SYSTEM/0008	8
+SYSTEM/0009	9
+SYSTEM/0010	10
+SYSTEM/0011	11
+SYSTEM/0012	12
+SYSTEM/0013	13
+SYSTEM/0014	14
+SYSTEM/0015	15
+SYSTEM/0016	16
+SYSTEM/0017	17
+SYSTEM/0018	18
+SYSTEM/0019	19
+SYSTEM/0020	20
+SYSTEM/0021	21
+SYSTEM/0022	22
+SYSTEM/0023	23
+SYSTEM/0024	24
+SYSTEM/0025	25
+SYSTEM/0026	26
+SYSTEM/0027	27
+SYSTEM/0028	28
+SYSTEM/0029	29
+SYSTEM/0030	30
+SYSTEM/0031	31
+SYSTEM/0032	32
+SYSTEM/0033	33
+SYSTEM/0034	34
+SYSTEM/0035	35
+SYSTEM/0036	36
+SYSTEM/0037	37
+SYSTEM/0038	38
+SYSTEM/0039	39
+SYSTEM/0040	40
+SYSTEM/0041	41
+SYSTEM/0042	42
+SYSTEM/0043	43
+SYSTEM/0044	44
+SYSTEM/0045	45
+SYSTEM/0046	46
+SYSTEM/0047	47
+SYSTEM/0048	48
+SYSTEM/0049	49
+SYSTEM/0050	50
+SYSTEM/0051	51
+SYSTEM/0052	52
+SYSTEM/0053	53
+SYSTEM/0054	54
+SYSTEM/0055	55
+SYSTEM/0056	56
+SYSTEM/0057	57
+SYSTEM/0058	58
+SYSTEM/0059	59
+SYSTEM/0060	60
+SYSTEM/0061	61
+SYSTEM/0062	62
+SYSTEM/0063	63
+SYSTEM/0064	64
+SYSTEM/0065	65
+SYSTEM/0066	66
+SYSTEM/0067	67
+SYSTEM/0068	68
+SYSTEM/0069	69
+SYSTEM/0070	70
+SYSTEM/0071	71
+SYSTEM/0072	72
+SYSTEM/0073	73
+SYSTEM/0074	74
+SYSTEM/0075	75
+SYSTEM/0076	76
+SYSTEM/0077	77
+SYSTEM/0078	78
+SYSTEM/0079	79
+SYSTEM/0080	80
+SYSTEM/0081	81
+SYSTEM/0082	82
+SYSTEM/0083	83
+SYSTEM/0084	84
+SYSTEM/0085	85
+SYSTEM/0086	86
+SYSTEM/0087	87
+SYSTEM/0088	88
+SYSTEM/0089	89
+SYSTEM/0090	90
+SYSTEM/0091	91
+SYSTEM/0092	92
+SYSTEM/0093	93
+SYSTEM/0094	94
+SYSTEM/0095	95
+SYSTEM/0096	96
+SYSTEM/0097	97
+SYSTEM/0098	98
+SYSTEM/0099	99
+SYSTEM/0100	100
+SYSTEM/0101	200
+SYSTEM/0102	300
+SYSTEM/0103	400
+SYSTEM/0104	500
+SYSTEM/0105	600
+SYSTEM/0106	700
+SYSTEM/0107	800
+SYSTEM/0108	900
+SYSTEM/0109	1000
+SYSTEM/0110	and
+SYSTEM/0111	minus
+SYSTEM/0112	point
+SYSTEM/0115	volt
+SYSTEM/0116	volts
+SYSTEM/0117	amp
+SYSTEM/0118	amps
+SYSTEM/0119	meter per second
+SYSTEM/0120	meters per second
+SYSTEM/0123	kilometer per hour
+SYSTEM/0124	kilometers per hour
+SYSTEM/0125	meter
+SYSTEM/0126	meters
+SYSTEM/0127	degree
+SYSTEM/0128	degrees
+SYSTEM/0129	percent
+SYSTEM/0130	percent
+SYSTEM/0131	million
+SYSTEM/0132	millions
+SYSTEM/0133	milliamp
+SYSTEM/0134	milliamps
+SYSTEM/0135	watt
+SYSTEM/0136	watts
+SYSTEM/0137	db
+SYSTEM/0138	db
+SYSTEM/0139	foot
+SYSTEM/0140	feet
+SYSTEM/0141	mile per hour
+SYSTEM/0142	miles per hours
+SYSTEM/0143	hour
+SYSTEM/0144	hours
+SYSTEM/0145	minute
+SYSTEM/0146	minutes
+SYSTEM/0147	second
+SYSTEM/0148	seconds
+SYSTEM/0149	rpm
+SYSTEM/0150	rpms
+SYSTEM/0151	g
+SYSTEM/0152	g
+SYSTEM/0160	.0
+SYSTEM/0161	0,1
+SYSTEM/0162	0,2
+SYSTEM/0163	0,3
+SYSTEM/0164	0,4
+SYSTEM/0165	0,5
+SYSTEM/0166	0,6
+SYSTEM/0167	0,7
+SYSTEM/0168	0,8
+SYSTEM/0169	0,9
+SYSTEM/a1_org	a1 low
+SYSTEM/a1_red	a1 critical
+SYSTEM/a2_org	a2 low
+SYSTEM/a2_red	a2 critical
+SYSTEM/a3_org	a3 low
+SYSTEM/a3_red	a3 critical
+SYSTEM/a4_org	a4 low
+SYSTEM/a4_red	a4 critical
+SYSTEM/eebad	bad eeprom
+SYSTEM/endtrim	trim maximum
+SYSTEM/inactiv	inactivity alarm
+SYSTEM/lowbatt	low battery
+SYSTEM/midtrim	trim center
+SYSTEM/rssi_org	rssi low
+SYSTEM/rssi_red	rssi critical
+SYSTEM/rx_org	receiver battery low
+SYSTEM/rx_red	receiver battery critical
+SYSTEM/swalert	switch warning
+SYSTEM/swr_red	radio antenna defective
+SYSTEM/tada	welcome to taranis
+SYSTEM/tada_opentx	welcome to opentx
+SYSTEM/telemko	telemetry lost
+SYSTEM/telemok	telemetry recovered
+SYSTEM/thralert	throttle warning
+SYSTEM/timer10	10 seconds
+SYSTEM/timer20	20 seconds
+SYSTEM/timer30	30 seconds
+SYSTEM/timerlt3	time up
