@@ -75,7 +75,7 @@ $ chmod +x taranisSoundGen.sh
 $ ./taranisSoundGen.sh
 ```
 
-You can then upload the SOUND directory on your Taranis remote in order to use them.
+You can then upload the content of the ./SOUND directory on your Taranis remote in order to use the freshly generated sounds.
 
 ## References 
 
