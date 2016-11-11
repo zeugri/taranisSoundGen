@@ -108,7 +108,7 @@ You can then upload the content of the ./SOUNDS directory on your Taranis remote
 
 ## References 
 
- * man say (macOS)
+ * [man say (macOS)](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/say.1.html)
  * [macOS supported audio file formats](https://developer.apple.com/library/content/documentation/MusicAudio/Conceptual/CoreAudioOverview/SupportedAudioFormatsMacOSX/SupportedAudioFormatsMacOSX.html)
  * [Open-TX](http://www.open-tx.org)
  * [Waveform Audio File Format (WAVE/WAV), wikipedia](https://en.wikipedia.org/wiki/WAV)
