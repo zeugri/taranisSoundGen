@@ -2,17 +2,15 @@
 
 supported os : macOS
 
-FrSky Taranis and Taranis Plus RC remote systems running OpenTX supports sound customisation. 
-
-http://www.frsky-rc.com/product/pro.php?pro_id=137
+[FrSky Taranis and Taranis Plus](http://www.frsky-rc.com/product/pro.php?pro_id=137) RC remote systems running OpenTX supports sound customisation. 
 
 Basically you can download sounds packs from http://www.open-tx.org/downloads for instance and use them on your remote for various settings or system events.
 
-OpenTX provides utilities for generating various sounds ("Voice Recorder" and "Voice Generator" utilities) but those only run on MS Windows system.
+OpenTX provides utilities for generating various sounds ("Voice Recorder" and "Voice Generator" utilities) but those only run on MS Windows systems.
 
 The "Taranis sound generator" is a simple script relying on MacOS text to speech "say" utility. 
 
-It's goal is to generate a complete sound pack from a text file containing output file names and text to be spoken.
+It's purpose is to generate a complete sound pack from a text file containing output file names and text to be spoken.
 
 Author & Contact : \<alex at ledrone dot club>
 
@@ -35,7 +33,7 @@ OpenTX sound files are to be found on the SD Card under the /SOUNDS directory. T
 
 ## Taranis Sound Generator
 
-This small script take à list of "sound path" "text to be pronounced" from the sounds_file.txt :
+This small script take a list of "sound path" "text to be pronounced" from the sounds_file.txt :
 
 ```
 ...
@@ -53,11 +51,15 @@ SYSTEM/swr_red	radio antenna defective
 ...
 ```
 
-field separator is tab (\t character).
+field separator is \t (tab).
 
-I provide a sample sounds_file.txt, you are totally free to create your own or to improove the provided one.
+I provide a sample sounds_file.txt initially taken from the ['taranis siri sound pack' by dale3h](https://github.com/dale3h/taranis-siri-sound-pack).
 
-It iterates trough the list and creates the .wav files accordingly and saves them in the correct directory structure in order to make them ready to use on your Taranis remote.
+You are totally free to create your own or to improve the provided one.
+
+the taranisSoundGen.sh script iterates trough the list in sounds_list.txt and creates the .wav files accordingly, saves them in the correct directory structure in order to make them ready to use on your Taranis remote.
+
+
 
 
 ## Usage
