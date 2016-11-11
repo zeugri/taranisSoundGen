@@ -27,7 +27,7 @@ voice="Samantha"
 soundFileFormat="WAVE"
 soundFileExtension="wav"
 
-mkdir -p ./SOUND/$lang/SYSTEM
+mkdir -p ./SOUNDS/$lang/SYSTEM
 
 while read p; do
     IFS=$'\t'; arr=($p); unset IFS;
