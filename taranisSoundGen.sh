@@ -31,5 +31,8 @@ mkdir -p ./SOUNDS/$lang/SYSTEM
 
 while read p; do
     IFS=$'\t'; arr=($p); unset IFS;
-    say -v $voice --file-format=$soundFileFormat --data-format=LEI16@8000 -o ./SOUNDS/$lang/${arr[0]}.$soundFileExtension --progress ${arr[1]}
+    path=./SOUNDS/$lang/${arr[0]}.$soundFileExtension
+    echo "encoding text \"${arr[1]}\" as file $path ...\c"
+    say -v $voice --file-format=$soundFileFormat --data-format=LEI16@32000 -o $path ${arr[1]}
+    echo "DONE"
 done <sounds_list.txt

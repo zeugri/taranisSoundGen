@@ -1,5 +1,7 @@
 # Taranis Sound Generator for OpenTX
 
+supported os : macOS
+
 FrSky Taranis and Taranis Plus RC remote systems running OpenTX supports sound customisation. 
 
 http://www.frsky-rc.com/product/pro.php?pro_id=137
@@ -8,7 +10,7 @@ Basically you can download sounds packs from http://www.open-tx.org/downloads fo
 
 OpenTX provides utilities for generating various sounds ("Voice Recorder" and "Voice Generator" utilities) but those only run on MS Windows system.
 
-The "Taranis ound Generator" is a simple script relying on unix/linux text to speech "say" utility. 
+The "Taranis sound generator" is a simple script relying on MacOS text to speech "say" utility. 
 
 It's goal is to generate a complete sound pack from a text file containing output file names and text to be spoken.
 
@@ -18,14 +20,14 @@ website : https://ledrone.club
 
 ## OpenTX sound directory structure
 
-OpenTX sound files are to be found on the SD Card under the /SOUND directory. The directory structure is as follows :
+OpenTX sound files are to be found on the SD Card under the /SOUNDS directory. The directory structure is as follows :
 
 ```
 /SOUNDS/$lang/...
 /SOUNDS/$lang/SYSTEM/...
 ```
 
-```lang``` is the OpenTX language, usually 'en' for 'English'.
+```$lang``` is the OpenTX language, usually 'en' for 'English'.
 
 ```/SOUNDS/$lang/``` contains various sounds especially custom ones.
 
@@ -77,12 +79,39 @@ $ chmod +x taranisSoundGen.sh
 $ ./taranisSoundGen.sh
 ```
 
-You can then upload the content of the ./SOUND directory on your Taranis remote in order to use the freshly generated sounds.
+NB : the quality of the audio file produced can be tweaked in the script by changing the ```--data-format=LEI16@32000```. (which reads as Little Endian, Integer 16 bit @ 32000 Hz).
+
+while running, the script produces the following output :
+
+```
+[...]
+encoding text "aileron high" as file ./SOUNDS/en/ailhgh.wav ...DONE
+encoding text "aileron medium" as file ./SOUNDS/en/ailmed.wav ...DONE
+encoding text "aileron low" as file ./SOUNDS/en/aillow.wav ...DONE
+encoding text "rudder coupled to ailerons" as file ./SOUNDS/en/rudcail.wav ...DONE
+encoding text "ailerons mixted with rudder" as file ./SOUNDS/en/ail2rud.wav ...DONE
+encoding text "elevator mixed with flaperons" as file ./SOUNDS/en/ele2flr.wav ...DONE
+encoding text "elevator mixed with flaps" as file ./SOUNDS/en/ele2flp.wav ...DONE
+encoding text "Knife Edge" as file ./SOUNDS/en/knfedge.wav ...DONE
+encoding text "Knife Edge Mix" as file ./SOUNDS/en/knfedgm.wav ...DONE
+encoding text "Flaperons" as file ./SOUNDS/en/flaprns.wav ...DONE
+encoding text "time up" as file ./SOUNDS/en/timup.wav ...DONE
+encoding text "time is up" as file ./SOUNDS/en/timisup.wav ...DONE
+encoding text "... mixed with ..." as file ./SOUNDS/en/mxdwth.wav ...DONE
+encoding text "... coupled with ..." as file ./SOUNDS/en/cpldwth.wav ...DONE
+encoding text "...mix" as file ./SOUNDS/en/mix.wav ...DONE
+encoding text "switch" as file ./SOUNDS/en/switch.wav ...DONE
+[...]
+```
+
+You can then upload the content of the ./SOUNDS directory on your Taranis remote in order to use the freshly generated sounds.
 
 ## References 
 
- * man say
- * http://www.open-tx.org
+ * man say (macOS)
+ * [macOS supported audio file formats](https://developer.apple.com/library/content/documentation/MusicAudio/Conceptual/CoreAudioOverview/SupportedAudioFormatsMacOSX/SupportedAudioFormatsMacOSX.html)
+ * [Open-TX](http://www.open-tx.org)
+ * [Waveform Audio File Format (WAVE/WAV), wikipedia](https://en.wikipedia.org/wiki/WAV)
  
  
 
