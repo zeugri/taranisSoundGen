@@ -1,6 +1,8 @@
 # Taranis Sound Generator for OpenTX
 
-Taranis and Taranis Plus RC remote systems running OpenTX supports sound customisation. 
+FrSky Taranis and Taranis Plus RC remote systems running OpenTX supports sound customisation. 
+
+http://www.frsky-rc.com/product/pro.php?pro_id=137
 
 Basically you can download sounds packs from http://www.open-tx.org/downloads for instance and use them on your remote for various settings or system events.
 
@@ -19,15 +21,15 @@ website : https://ledrone.club
 OpenTX sound files are to be found on the SD Card under the /SOUND directory. The directory structure is as follows :
 
 ```
-/SOUND/$lang/...
-/SOUND/$lang/SYSTEM/...
+/SOUNDS/$lang/...
+/SOUNDS/$lang/SYSTEM/...
 ```
 
 ```lang``` is the OpenTX language, usually 'en' for 'English'.
 
-```/SOUND/$lang/``` contains various sounds especially custom ones.
+```/SOUNDS/$lang/``` contains various sounds especially custom ones.
 
-```/SOUND/$lang/SYSTEM/``` contains the system sounds (boot sound, numbers, units, etc.).
+```/SOUNDS/$lang/SYSTEM/``` contains the system sounds (boot sound, numbers, units, etc.).
 
 ## Taranis Sound Generator
 
