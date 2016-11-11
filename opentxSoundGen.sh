@@ -21,11 +21,23 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-lang="en"
-voice="Samantha"
+usage() {
+    cat <<EOM
+    Usage: 
+    $(basename $0) my_sounds_file.txt [lang] [voice] 
+EOM
+    exit 0
+}
 
+[ -z $1 ] && { usage; }
+
+soundFile=$1
+lang=${2:-en}
+voice=${3:-Samantha}
 soundFileFormat="WAVE"
 soundFileExtension="wav"
+
+echo "will process $soundFile file (lang=$lang, voice=$voice) ..."
 
 mkdir -p ./SOUNDS/$lang/SYSTEM
 
@@ -35,4 +47,4 @@ while read p; do
     echo "encoding text \"${arr[1]}\" as file $path ...\c"
     say -v $voice --file-format=$soundFileFormat --data-format=LEI16@32000 -o $path ${arr[1]}
     echo "DONE"
-done <sounds_list.txt
+done <$soundFile

@@ -1,6 +1,15 @@
 # Taranis Sound Generator for OpenTX
 
-supported os : macOS
+A shell script sound pack generator for OpenTX. This script relies on the ```say``` command therefore it only works on macOS for now.
+
+```
+    Usage:
+    opentxSoundGen.sh my_sounds_file.txt [lang] [voice]
+```
+
+
+## Documentation
+
 
 [FrSky Taranis and Taranis Plus](http://www.frsky-rc.com/product/pro.php?pro_id=137) RC remote systems running OpenTX supports sound customisation. 
 
@@ -10,13 +19,15 @@ OpenTX provides utilities for generating various sounds ("Voice Recorder" and "V
 
 The "Taranis sound generator" is a simple script relying on macOS text to speech "say" utility. 
 
+Despite its name you can use this script for any RC remote running OpenTX and supporting sound speech. Maybe need to tweak audio format to adapt your hardware.
+
 It's purpose is to generate a complete sound pack from a text file containing output file names and text to be spoken.
 
 Author & Contact : \<alex at ledrone dot club>
 
 website : https://ledrone.club
 
-## OpenTX sound directory structure
+### OpenTX sound directory structure
 
 OpenTX sound files are to be found on the SD Card under the /SOUNDS directory. The directory structure is as follows :
 
@@ -31,9 +42,15 @@ OpenTX sound files are to be found on the SD Card under the /SOUNDS directory. T
 
 ```/SOUNDS/$lang/SYSTEM/``` contains the system sounds (boot sound, numbers, units, etc.).
 
-## Taranis Sound Generator
+### The sounds file
 
-This small script take a list of "sound path" "text to be pronounced" from the sounds_file.txt :
+The script takes as an argument, a text file containing the output sound file name and the text to be spoken. The line format is :
+
+```
+[output file name without extension] [tab] [text to be spoken]\n
+```
+
+As an example here is a snippet of files going to the SYSTEM folder :
 
 ```
 ...
@@ -51,36 +68,35 @@ SYSTEM/swr_red	radio antenna defective
 ...
 ```
 
-field separator is \t (tab).
+Field separator is \t (tab). The file name doesn't need to contain the .wav extension as it is appended automatically by the script.
 
-I provide a sample sounds_file.txt initially taken from the ['taranis siri sound pack' by dale3h](https://github.com/dale3h/taranis-siri-sound-pack).
+I provide here a sample sounds_file.txt initially taken from the ['taranis siri sound pack' by dale3h](https://github.com/dale3h/taranis-siri-sound-pack).
 
 You are totally free to create your own or to improve the provided one.
 
-the taranisSoundGen.sh script iterates trough the list in sounds_list.txt and creates the .wav files accordingly, saves them in the correct directory structure in order to make them ready to use on your Taranis remote.
+the opentxSoundGen.sh script iterates trough the list in sounds_list.txt and creates the .wav files accordingly, saves them in the correct directory structure in order to make them ready to use on your Taranis remote.
 
 
-
-## Usage
+### Usage of the opentxSoundGen.sh script
 
 Create an empty directory.
 
-Put the ```taranisSoundGen.sh``` script and ```sounds_list.txt``` in this directory.
+Put the ```opentxSoundGen.sh``` script and ```sounds_list.txt``` in this directory.
 
 Make sure that the ```say```system utility is available on your system.
-
-Edit the script in order to change the ```lang``` and ```voice``` variable in order to match your system and needs.
-
-It is setup by default to run on my macOS and create sound files in english using the 'Samantha' voice (lang=en, voice=Samantha).
-
-Please see at the bottom of this README file the list of voices/languages supported by say in macOS.
 
 Run the script :
 
 ```
-$ chmod +x taranisSoundGen.sh
-$ ./taranisSoundGen.sh
+$ chmod +x opentxSoundGen.sh
+$ ./opentxSoundGen.sh sounds_list.txt
 ```
+
+optionally you can specify ```lang``` and ```voice``` parameters to the script in order to match your system and needs.
+
+By default, the script will use lang=en and voice=Samantha.
+
+Please see at the bottom of this README file the list of voices/languages supported by say in macOS.
 
 NB : the quality of the audio file produced can be tweaked in the script by changing the ```--data-format=LEI16@32000```. (which reads as Little Endian, Integer 16 bit @ 32000 Hz).
 
