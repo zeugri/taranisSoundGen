@@ -542,8 +542,8 @@ SYSTEM/rx_org	receiver battery low
 SYSTEM/rx_red	receiver battery critical
 SYSTEM/swalert	switch warning
 SYSTEM/swr_red	radio antenna defective
-SYSTEM/tada	welcome to taranis
-SYSTEM/tada_opentx	welcome to opentx
+SYSTEM/tada	welcome to open T X
+SYSTEM/tada_taranis	welcome to taranis
 SYSTEM/telemko	telemetry lost
 SYSTEM/telemok	telemetry recovered
 SYSTEM/thralert	throttle warning
