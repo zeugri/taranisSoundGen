@@ -1,12 +1,11 @@
 # Taranis Sound Generator for OpenTX
 
-A shell script sound pack generator for OpenTX. This script relies on the ```say``` command therefore it only works on macOS for now.
+A shell script sound pack generator for OpenTX. This script works on macOS and GNU/Linux and *nix systems.
 
 ```
     Usage:
     opentxSoundGen.sh my_sounds_file.txt [lang] [voice]
 ```
-
 
 ## Documentation
 
@@ -17,15 +16,27 @@ Basically you can download sounds packs from http://www.open-tx.org/downloads fo
 
 OpenTX provides utilities for generating various sounds ("Voice Recorder" and "Voice Generator" utilities) but those only run on MS Windows systems.
 
-The "Taranis sound generator" is a simple script relying on macOS text to speech "say" utility. 
-
-Despite its name you can use this script for any RC remote running OpenTX and supporting sound speech. Maybe need to tweak audio format to adapt your hardware.
+The "Taranis Sound Generator" is a simple bash script. Despite its name you can use this script for any RC remote running OpenTX and supporting sound speech. Maybe need to tweak audio format to adapt your hardware.
 
 It's purpose is to generate a complete sound pack from a text file containing output file names and text to be spoken.
 
 Author & Contact : \<alex at ledrone dot club>
 
 website : https://ledrone.club
+
+
+## Requirements
+
+### macOS
+
+No requirements, the ```opentxSoundGen.sh``` script will use the system command ```say``` to produce the sound files.
+
+### Linux / Unix
+
+You need to install ```mplayer``` in order to make the  ```opentxSoundGen.sh``` script able to produce the sound files.
+
+You also need Internet access as the text to speech processing relies on the Google Translate Text To Speech "API".
+
 
 ### OpenTX sound directory structure
 
@@ -94,7 +105,7 @@ $ ./opentxSoundGen.sh sounds_list.txt
 
 optionally you can specify ```lang``` and ```voice``` parameters to the script in order to match your system and needs.
 
-By default, the script will use lang=en and voice=Samantha.
+By default, on macOS, the script will use lang=en and voice=Samantha.
 
 Please see at the bottom of this README file the list of voices/languages supported by say in macOS.
 

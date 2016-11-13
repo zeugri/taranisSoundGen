@@ -31,20 +31,46 @@ EOM
 
 [ -z $1 ] && { usage; }
 
-soundFile=$1
-lang=${2:-en}
-voice=${3:-Samantha}
+which say > /dev/null
+if [ $? -eq 0 ]; then
+    system=macos
+else
+    system=linux
+fi
+
 soundFileFormat="WAVE"
 soundFileExtension="wav"
-
-echo "will process $soundFile file (lang=$lang, voice=$voice) ..."
-
+soundFile=$1
+lang=${2:-en}
 mkdir -p ./SOUNDS/$lang/SYSTEM
 
-while read p; do
-    IFS=$'\t'; arr=($p); unset IFS;
-    path=./SOUNDS/$lang/${arr[0]}.$soundFileExtension
-    echo "encoding text \"${arr[1]}\" as file $path ...\c"
-    say -v $voice --file-format=$soundFileFormat --data-format=LEI16@32000 -o $path ${arr[1]}
-    echo "DONE"
-done <$soundFile
+case $system in
+macos)
+    voice=${3:-Samantha}
+    echo "[macOS] will process $soundFile file (lang=$lang, voice=$voice) ..."
+
+    while read p; do
+        IFS=$'\t'; arr=($p); unset IFS;
+        path=./SOUNDS/$lang/${arr[0]}.$soundFileExtension
+        echo "encoding text \"${arr[1]}\" as file $path ...\c"
+        say -v $voice --file-format=$soundFileFormat --data-format=LEI16@32000 -o $path ${arr[1]}
+        echo "DONE"
+    done <$soundFile
+    ;;
+linux)
+    echo "[GNU/Linux] will process $soundFile file (lang=$lang, voice=default) ..."
+	mplayer=`which mplayer 2>&1`
+   	
+    while read p; do
+        IFS=$'\t'; arr=($p); unset IFS;
+        path=./SOUNDS/$lang/${arr[0]}.$soundFileExtension
+        echo "encoding text \"${arr[1]}\" as file $path ...\c"
+        google_query="http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${arr[1]// /+}&tl=En-us"
+		$mplayer -ao pcm:waveheader:file=$path -really-quiet -noconsolecontrols -af format=s16le -srate 32000 $google_query
+        echo "DONE"
+    done <$soundFile 
+	;;
+*)
+    echo "dunno what to do with myself"
+    ;;
+esac
