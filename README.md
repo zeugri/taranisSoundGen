@@ -4,7 +4,17 @@ A shell script sound pack generator for OpenTX. This script works on macOS and G
 
 ```
     Usage:
-    opentxSoundGen.sh my_sounds_file.txt [lang] [voice]
+    opentxSoundGen.sh [-l lang] [-v voice] [-p processor <say|mplayer>] [-h help] my_sounds_file.txt
+    
+
+	-l lang : corresponds to the OpenTX firmware language (en, fr, etc.)
+	
+	-v voice : macOS only, corresponds to the 'say' voice to be used. see at the bottom of this document
+	
+	-p processor <say|mplayer> : the processor used to create the wav files.
+								 By default, on macOS the 'say' utility will
+								 be used. You can optionally (mandatory on 
+								 linux/unix) install mplayer.
 ```
 
 ## Documentation
@@ -30,6 +40,8 @@ website : https://ledrone.club
 ### macOS
 
 No requirements, the ```opentxSoundGen.sh``` script will use the system command ```say``` to produce the sound files.
+
+Optionnally you can install mplayer (via brew or macports for instance) and use the ```-p processor``` option in order to get sounds produced via Google tts / mplayer. 
 
 ### Linux / Unix
 
@@ -103,9 +115,13 @@ $ chmod +x opentxSoundGen.sh
 $ ./opentxSoundGen.sh sounds_list.txt
 ```
 
-optionally you can specify ```lang``` and ```voice``` parameters to the script in order to match your system and needs.
+optionally you can specify ```-l lang```, ```-v voice``` and ```-p processor``` parameters to the script in order to match your system and needs.
 
-By default, on macOS, the script will use lang=en and voice=Samantha.
+By default : 
+
+ * On macOS (say) : The script will use lang=en and voice=Samantha.
+ * On linux / unix (mplayer) : The script will use lang=en and voice will be the default EN-us from google translate_tts api. (TODO : make it changeable)
+
 
 Please see at the bottom of this README file the list of voices/languages supported by say in macOS.
 
@@ -139,6 +155,7 @@ You can then upload the content of the ./SOUNDS directory on your Taranis remote
 ## References 
 
  * [man say (macOS)](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/say.1.html)
+ * [RPi Text to speech](http://elinux.org/RPi_Text_to_Speech_(Speech_Synthesis\))
  * [macOS supported audio file formats](https://developer.apple.com/library/content/documentation/MusicAudio/Conceptual/CoreAudioOverview/SupportedAudioFormatsMacOSX/SupportedAudioFormatsMacOSX.html)
  * [Open-TX](http://www.open-tx.org)
  * [Waveform Audio File Format (WAVE/WAV), wikipedia](https://en.wikipedia.org/wiki/WAV)

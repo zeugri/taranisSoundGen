@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # MIT License
 #
 # Copyright (c) 2016 Alexandre Arvinte
@@ -21,56 +21,115 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-usage() {
+usage() { 
     cat <<EOM
     Usage: 
-    $(basename $0) my_sounds_file.txt [lang] [voice] 
+    $(basename $0) [-l lang] [-v voice] [-p processor <say|mplayer>] [-h help] my_sounds_file.txt
 EOM
-    exit 0
+    exit 1 
 }
 
-[ -z $1 ] && { usage; }
+get_binary()
+{
+    if [ -n "$p" ]; then
+        if ! which "$p"; then
+            return 1
+        fi
+        local binary=$(which "$p")
+    else
+        for e in say mplayer; do
+            if ! which "$e"; then
+                continue
+            fi
+            local binary=$(which "$e")
+            break
+        done
+        if [ -z "$binary" ]; then
+            return 1
+        fi
+    fi
+}
 
-which say > /dev/null
-if [ $? -eq 0 ]; then
-    system=macos
-else
-    system=linux
-fi
+
+while getopts ":l:v:p:" o; do
+    case "${o}" in
+        l)
+            l=${OPTARG}
+            ;;
+        v)
+            v=${OPTARG}
+            ;;
+        p)
+            p=${OPTARG}
+            [ "$p" == "say" ] || [ $p == "mplayer" ] || usage            
+            ;;    
+        *)
+            usage
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+# check if sounds file is provided
+[ -z $1 ] && { usage; }
 
 soundFileFormat="WAVE"
 soundFileExtension="wav"
 soundFile=$1
-lang=${2:-en}
+lang=${l:-en}
+
+# create the sound directory arborescence
 mkdir -p ./SOUNDS/$lang/SYSTEM
 
-case $system in
-macos)
-    voice=${3:-Samantha}
-    echo "[macOS] will process $soundFile file (lang=$lang, voice=$voice) ..."
+#test if say or mplayer is available
+binary=$(get_binary)
+if [ $? -ne 0 ];then
+    cat <<EOM
+    
+    Could not find any WAV processor.
+    
+    On macOS, the default processor is "say" (try -v say option).
+    
+    On Linux/Unix : "mplayer" package must be installed.
+    
+EOM
+    usage
+fi    
+processor=$(basename $binary)
 
-    while read p; do
-        IFS=$'\t'; arr=($p); unset IFS;
-        path=./SOUNDS/$lang/${arr[0]}.$soundFileExtension
-        echo "encoding text \"${arr[1]}\" as file $path ...\c"
-        say -v $voice --file-format=$soundFileFormat --data-format=LEI16@32000 -o $path ${arr[1]}
-        echo "DONE"
-    done <$soundFile
+case $processor in
+say)
+    voice=${v:-Samantha}
+    echo "[say] will process $soundFile file (lang=$lang, voice=$voice) ..."
     ;;
-linux)
-    echo "[GNU/Linux] will process $soundFile file (lang=$lang, voice=default) ..."
-	mplayer=`which mplayer 2>&1`
-   	
-    while read p; do
-        IFS=$'\t'; arr=($p); unset IFS;
-        path=./SOUNDS/$lang/${arr[0]}.$soundFileExtension
-        echo "encoding text \"${arr[1]}\" as file $path ...\c"
-        google_query="http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${arr[1]// /+}&tl=En-us"
-		$mplayer -ao pcm:waveheader:file=$path -really-quiet -noconsolecontrols -af format=s16le -srate 32000 $google_query
-        echo "DONE"
-    done <$soundFile 
-	;;
+mplayer)
+    echo "[mplayer] will process $soundFile file (lang=$lang, voice=default) ..."
+    ;;
 *)
     echo "dunno what to do with myself"
+    exit 0
     ;;
 esac
+
+# processing
+while read p; do
+    IFS=$'\t'; arr=($p); unset IFS;
+    if [ -z ${arr[0]} ]; then continue; fi
+    path=./SOUNDS/$lang/${arr[0]}.$soundFileExtension
+        
+    case $processor in
+    say)    
+        echo -n "encoding text \"${arr[1]}\" as file $path ..."
+        $binary -v $voice --file-format=$soundFileFormat --data-format=LEI16@32000 -o $path ${arr[1]}
+        ;;
+    mplayer)
+        echo -n "encoding text \"${arr[1]}\" as file $path ..."
+        google_query="http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${arr[1]// /+}&tl=En-us"
+        $binary -ao pcm:waveheader:file=$path -really-quiet -noconsolecontrols -af format=s16le -srate 32000 $google_query
+        ;;
+    *)
+        exit 1
+        ;;
+    esac
+    echo "DONE"
+done <$soundFile
